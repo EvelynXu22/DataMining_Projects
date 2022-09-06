@@ -1,0 +1,19 @@
+tx_county_case_death_top_10[1:20,] %>% 
+  ggplot(aes(x = number, y = reorder(county_name, number), fill = type)) + 
+  # theme(axis.text.x = element_text(angle = 45)) +
+  geom_bar(stat="identity", position="dodge") +
+  # guides(fill = guide_legend(reverse=TRUE)) +
+  scale_fill_manual(values = c("cornflowerblue","orange")) +
+
+  theme(text=element_text(size=20)) +
+  
+  labs(
+    title = "Number of Confirmed Cases and Deaths of Top 10 Counties in Texas",
+    x = "Number of confirmed cases and deaths",
+    y = "County")
+
+
+  case:  https://console.cloud.google.com/marketplace/product/usafacts-public-data/covid19-us-Cases
+  income: https://console.cloud.google.com/marketplace/product/bureau-econonmic-analysis/gdp-income-by-county
+  hospital: https://console.cloud.google.com/marketplace/product/hhs/hospital-general-information
+  
